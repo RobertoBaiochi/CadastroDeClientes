@@ -1,6 +1,6 @@
 ﻿namespace SistemaLoja
 {
-    partial class ModalAdd
+    partial class Modal
     {
         /// <summary>
         /// Required designer variable.
@@ -36,7 +36,7 @@
             this.txtEndereco = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnSalvar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -115,26 +115,26 @@
             this.btnCancel.UseVisualStyleBackColor = true;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
-            // button1
+            // btnSalvar
             // 
-            this.button1.DialogResult = System.Windows.Forms.DialogResult.OK;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.Location = new System.Drawing.Point(346, 388);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 32);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Salvar";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnSalvar.DialogResult = System.Windows.Forms.DialogResult.OK;
+            this.btnSalvar.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSalvar.Location = new System.Drawing.Point(346, 388);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(117, 32);
+            this.btnSalvar.TabIndex = 8;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
-            // ModalAdd
+            // Modal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.AppWorkspace;
             this.ClientSize = new System.Drawing.Size(507, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.txtEndereco);
             this.Controls.Add(this.label4);
@@ -146,7 +146,7 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MaximizeBox = false;
             this.MinimizeBox = false;
-            this.Name = "ModalAdd";
+            this.Name = "Modal";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -163,6 +163,6 @@
         private System.Windows.Forms.TextBox txtEndereco;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnCancel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSalvar;
     }
 }

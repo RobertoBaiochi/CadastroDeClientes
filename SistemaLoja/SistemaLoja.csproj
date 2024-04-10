@@ -53,19 +53,19 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
-    <Compile Include="ModalAdd.cs">
+    <Compile Include="Modal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ModalAdd.Designer.cs">
-      <DependentUpon>ModalAdd.cs</DependentUpon>
+    <Compile Include="Modal.Designer.cs">
+      <DependentUpon>Modal.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="ModalAdd.resx">
-      <DependentUpon>ModalAdd.cs</DependentUpon>
+    <EmbeddedResource Include="Modal.resx">
+      <DependentUpon>Modal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

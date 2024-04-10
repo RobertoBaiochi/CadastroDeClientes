@@ -1,11 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SistemaLoja
@@ -26,15 +20,15 @@ namespace SistemaLoja
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            // Acrescentar Login
         }
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
-            ModalAdd modal = new ModalAdd();
+            Modal modal = new Modal();
 
-            if (modal.ShowDialog() == DialogResult.OK )
+            if (modal.ShowDialog() == DialogResult.OK)
             {
                 Cliente cliente = new Cliente
                 {
@@ -43,7 +37,10 @@ namespace SistemaLoja
                     Cidade = modal.CidadeCliente
                 };
 
-                clientes.Add( cliente );
+                if (cliente.Nome != "" && cliente.Endereco != "" && cliente.Cidade != "")
+                {
+                    clientes.Add(cliente);
+                }
             }
 
             Listar();
@@ -51,18 +48,37 @@ namespace SistemaLoja
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
-  
+            int index = Lista.SelectedIndex;
+
+            if (index < 0) return;
+
+            Modal modal = new Modal();
+
+            modal.NomeCliente = clientes[index].Nome;
+            modal.EnderecoCliente = clientes[index].Endereco;
+            modal.CidadeCliente = clientes[index].Cidade;
+
+            if (modal.ShowDialog() == DialogResult.OK)
+            {
+                clientes[index].Nome = modal.NomeCliente;
+                clientes[index].Endereco = modal.EnderecoCliente;
+                clientes[index].Cidade = modal.CidadeCliente;
+            }
+
+            Listar();
         }
 
         private void btnDel_Click(object sender, EventArgs e)
         {
             int index = Lista.SelectedIndex;
+            if (index < 0) return;
             clientes.RemoveAt(index);
             Listar();
         }
 
         private void Lista_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            btnEdit_Click(btnEdit, EventArgs.Empty);
 
         }
 
@@ -70,8 +86,8 @@ namespace SistemaLoja
         {
             Lista.Items.Clear();
 
-            foreach (Cliente cliente in clientes) 
-            { 
+            foreach (Cliente cliente in clientes)
+            {
                 Lista.Items.Add($"ID: {cliente.ID} ## Nome: {cliente.Nome} - Endereço: {cliente.Endereco} - Cidade: {cliente.Cidade}.");
             }
         }
