@@ -25,8 +25,8 @@ namespace SistemaLoja
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
-
             Modal modal = new Modal();
+            modal.LabelModal = "Adcionar Cliente";
 
             if (modal.ShowDialog() == DialogResult.OK)
             {
@@ -48,11 +48,13 @@ namespace SistemaLoja
 
         private void btnEdit_Click(object sender, EventArgs e)
         {
+
             int index = Lista.SelectedIndex;
 
             if (index < 0) return;
 
             Modal modal = new Modal();
+            modal.LabelModal = "Editar Cliente";
 
             modal.NomeCliente = clientes[index].Nome;
             modal.EnderecoCliente = clientes[index].Endereco;

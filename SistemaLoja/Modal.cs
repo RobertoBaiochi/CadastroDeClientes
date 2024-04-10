@@ -22,6 +22,15 @@ namespace SistemaLoja
             set { txtCidade.Text = value; }
         }
 
+        public string LabelModal
+        {
+            get { return lblCliente.Text; }
+            set
+            {
+                lblCliente.Text = value;
+            }
+        }
+
         public Modal()
         {
             InitializeComponent();
