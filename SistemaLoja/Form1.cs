@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SistemaLoja.Login;
+using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
 
@@ -20,8 +21,23 @@ namespace SistemaLoja
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            // Acrescentar Login
+            FormLogin login = new FormLogin();
+
+            while (UsuarioLogin.UsuarioLogado == null)
+            {
+                Visible = false;
+                login.ShowDialog();
+
+                if(FormLogin.Cancelar)
+                {
+                    Application.Exit();
+                    return;
+                }
+            }
+
+            Visible = true;
         }
+
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
